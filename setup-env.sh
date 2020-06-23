@@ -35,11 +35,13 @@ mkdir builds
 git clone https://github.com/NablaVM/libnabla 
 git clone https://github.com/NablaVM/solace 
 git clone https://github.com/NablaVM/nabla 
+git clone https://github.com/NablaVM/del
 
 cd builds
 mkdir nabla
 mkdir solace
 mkdir libnabla
+mkdir del
 
 #
 #   Write a build script
@@ -57,6 +59,10 @@ make -j9
 
 cd ${nablaPath}/builds/nabla
 cmake ${nablaPath}/nabla/src
+make -j9
+
+cd ${nablaPath}/builds/del
+cmake ${nablaPath}/del/src
 make -j9
 
 cd ${nablaPath}/builds
